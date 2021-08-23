@@ -111,7 +111,7 @@ export default {
       },
       series: [6, 5, 12, 2, 3],
       semiDonutoptions: {
-        series: [18, 5, 2, 3],
+        series: [18, 6, 2, 3],
         labels: [
           "Primeira dose",
           "Segunda dose",
@@ -155,7 +155,7 @@ export default {
       },
       CitySeries: [
         {
-          data: [2, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+          data: [3, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         },
       ],
       chartOptions: {
@@ -171,7 +171,13 @@ export default {
           },
         },
         dataLabels: {
-          enabled: false,
+          enabled: true,
+        },
+        title: {
+          text: "Pessoas por cidade",
+        },
+        fill: {
+          opacity: 1,
         },
         xaxis: {
           categories: [
@@ -194,6 +200,7 @@ export default {
             "Campos dos goytacazes",
             "Vila velha",
             "São Bernado do Campo",
+            "Osasco",
           ],
         },
       },
