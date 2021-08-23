@@ -29,7 +29,7 @@
             <h2 class="text-center">Defenda o sus</h2>
             <p class="absolut-text">Atualmente o servidor contem 66 membros.</p>
             <p class="absolut-text">
-              Número de entrevistados 20 <b>(30,3%) </b>.
+              Número de entrevistados 28 <b>(30,3%) </b>.
             </p>
 
             <div>
@@ -109,10 +109,15 @@ export default {
           categories: [],
         },
       },
-      series: [4, 3, 9, 3, 3],
+      series: [6, 5, 12, 2, 3],
       semiDonutoptions: {
-        series: [13, 3, 3],
-        labels: ["Primeira dose", "Segunda dose", "Não vacinados"],
+        series: [18, 5, 2, 3],
+        labels: [
+          "Primeira dose",
+          "Segunda dose",
+          "Dose única",
+          "Não vacinados",
+        ],
         chart: {
           type: "donut",
         },
@@ -150,7 +155,7 @@ export default {
       },
       CitySeries: [
         {
-          data: [2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+          data: [2, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         },
       ],
       chartOptions: {
@@ -171,6 +176,7 @@ export default {
         xaxis: {
           categories: [
             "Fortaleza",
+            "Lisboa (PT)",
             "São Paulo",
             "Salvador",
             "Curitiba",
@@ -186,6 +192,8 @@ export default {
             "Jundiaí",
             "Oeiras",
             "Campos dos goytacazes",
+            "Vila velha",
+            "São Bernado do Campo",
           ],
         },
       },
