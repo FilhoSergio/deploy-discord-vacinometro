@@ -3,13 +3,13 @@
     <div class="layout">
       <header class="header">
         <strong>
-          <img src="@/assets/logo_locadora.svg" width="40" height="40" />
+          <img src="@/assets/logo_locadora.svg" width="40" height="40" style="vertical-align: middle;"/>
           <a class="logo-link" to="/">Vacinômetro</a>
         </strong>
         <nav class="nav">
           <a class="nav__link" href="/">Início</a>
-          <a class="nav__link" href="/about/">Sobre</a>
-          <a class="nav__link" href="/dados/">Dados</a>
+          <a class="nav__link" href="#dados">Sobre</a>
+          <a class="nav__link" href="#dados">Dados</a>
         </nav>
       </header>
       <slot />

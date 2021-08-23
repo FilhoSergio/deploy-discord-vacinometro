@@ -22,79 +22,37 @@
 
       <img alt="acordo" class="deal" src="@/assets/undraw_doctors_hwty.svg" />
     </div>
-    <section class="layout-items">
-      <h2 class="text-center">Medidas preventivas</h2>
-      <div class="step step1">
-        <div class="content-image">
-          <div class="step-number">
-            <div class="step-number-text"><h6>1</h6></div>
-          </div>
+    <section class="layout-items" id="dados">
+      <div class="video-container">
+        <section class="video layout">
+          <div>
+            <h2 class="text-center">Defenda o sus</h2>
+            <p class="absolut-text">Atualmente o servidor contem 66 membros.</p>
+            <p class="absolut-text">
+              Número de entrevistados 20 <b>(30,3%) </b>.
+            </p>
 
-          <img src="@/assets/mask.svg" width="60" height="60"/>
-          <p class="text-center p-content">
-            Use máscara , de preferência pff2.
-          </p>
-        </div>
-        <div class="content-image">
-          <div class="step-number">
-            <div class="step-number-text"><h6>2</h6></div>
+            <div>
+              <vue-apex-charts
+                width="500"
+                type="donut"
+                :options="options"
+                :series="series"
+              ></vue-apex-charts>
+            </div>
+            <div>
+              <vue-apex-charts
+                width="500"
+                type="donut"
+                :options="semiDonutoptions"
+                :labels="semiDonutoptions.labels"
+                :series="semiDonutoptions.series"
+              ></vue-apex-charts>
+            </div>
           </div>
-          <img src="@/assets/distance.svg" width="60" height="60" />
-          <p class="text-center p-content">
-            Evite aglomerações seja consciente.
-          </p>
-        </div>
-        <div class="content-image content-image-icon">
-          <div class="step-number">
-            <div class="step-number-text"><h6>3</h6></div>
-          </div>
-
-          <img src="@/assets/clean.svg" width="60" height="60" />
-          <p class="text-center p-content">
-            Lave bem as mãos e utilize álcool 70%.
-          </p>
-          <span> </span>
-        </div>
+        </section>
       </div>
     </section>
-    <div class="features-steps video">
-      <div
-        style="
-          margin-top: 100px;
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
-        "
-      >
-        <div>
-          <iframe
-            width="347"
-            height="265"
-            src="https://www.youtube.com/embed/tUw6lRQ5cs4"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="content">
-          <div class="description-container" style="margin-left: 50px">
-            <h2>Atenção</h2>
-            <img src="@/assets/bacteria.svg" width="60" height="60" />
-            <p>
-              A COVID-19 é uma doença infecciosa causada pelo novo coronavírus
-              (SARS-CoV-2) e tem como principais sintomas febre, cansaço e tosse
-              seca. Alguns pacientes podem apresentar dores, congestão nasal,
-              dor de cabeça, conjuntivite, dor de garganta, diarreia, perda de
-              paladar ou olfato, erupção cutânea na pele ou descoloração dos
-              dedos das mãos ou dos pés. Esses sintomas geralmente são leves e
-              começam gradualmente. Algumas pessoas são infectadas, mas
-              apresentam apenas sintomas muito leves.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="video-container">
       <section class="video layout">
         <div>
@@ -104,7 +62,7 @@
               width="600"
               type="bar"
               :options="chartOptions"
-              :series="series"
+              :series="CitySeries"
             ></vue-apex-charts>
           </div>
         </div>
@@ -124,7 +82,73 @@ export default {
   },
   data() {
     return {
-      series: [
+      options: {
+        chart: {
+          id: "vuechart-example",
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {},
+              },
+            },
+          },
+        },
+
+        labels: [
+          "Coronovac",
+          "Astrazeneca",
+          "Pfizer",
+          "Janssen",
+          "Não vacinados",
+        ],
+        xaxis: {
+          categories: [],
+        },
+      },
+      series: [4, 3, 9, 3, 3],
+      semiDonutoptions: {
+        series: [13, 3, 3],
+        labels: ["Primeira dose", "Segunda dose", "Não vacinados"],
+        chart: {
+          type: "donut",
+        },
+        plotOptions: {
+          pie: {
+            startAngle: -90,
+            endAngle: 90,
+            offsetY: 10,
+            donut: {
+              labels: {
+                show: true,
+                name: {},
+              },
+            },
+          },
+        },
+        grid: {
+          padding: {
+            bottom: -80,
+          },
+        },
+        responsive: [
+          {
+            breakpoint: 414,
+            options: {
+              chart: {
+                width: 400,
+              },
+              legend: {
+                position: "bottom",
+              },
+            },
+          },
+        ],
+      },
+      CitySeries: [
         {
           data: [2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         },
@@ -133,7 +157,7 @@ export default {
         chart: {
           type: "bar",
           height: 400,
-          width: 400,
+          width: 300,
         },
         plotOptions: {
           bar: {
