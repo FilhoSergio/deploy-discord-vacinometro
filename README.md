@@ -1,4 +1,5 @@
-# charts
+# Vacinômetro netlify
+[![Netlify Status](https://api.netlify.com/api/v1/badges/76f0c053-c751-4aad-ba9e-94bc4c2a29db/deploy-status)](https://app.netlify.com/sites/ovacinometro/deploys)
 
 ## Project setup
 ```
